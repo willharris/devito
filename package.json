@@ -1,0 +1,22 @@
+{
+  "name": "shorter",
+  "version": "1.0.0",
+  "description": "URL shortening service",
+  "main": "apps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/willharris/shorter.git"
+  },
+  "author": "Will Harris <will@harris.ch>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willharris/shorter/issues"
+  },
+  "homepage": "https://github.com/willharris/shorter#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
