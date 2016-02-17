@@ -1,0 +1,30 @@
+//body
+//  lost-utility: edit
+
+columns()
+  lost-utility: clearfix
+  padding: 10px
+  > *
+    &:first-child
+      lost-column: 4/13
+    &:nth-child(2)
+      lost-column: 8/13
+    &:nth-child(3)
+      lost-column: 1/13
+
+.url-list
+  padding: 10px
+  background: lightblue
+  .url-header, .url-entry
+    columns()
+  .url-entry
+    span
+      padding: 5px
+      background: lighten(lightblue, 30%)
+  .new-url-entry
+    form
+      columns()
+      input
+        &[type='submit']
+          margin-top: 20px
+          lost-column: 1/5

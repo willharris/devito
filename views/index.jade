@@ -1,0 +1,31 @@
+extends layout
+
+block body
+  div(class='container')
+    div(class='jumbotron')
+      h1 URL Shortener
+      p How awesome is this? Your very own URL shortening service!
+    section
+      div(class='url-list', ng-controller='UrlListController as urlList')
+        div(class='url-header')
+          h4 Short Link
+          h4 Target
+        div(class='url-entry', ng-repeat='url in urls')
+          span(class='short-link') {{ url.shortLink }}
+          span(class='target') {{ url.target }}
+          button(ng-click='urlList.deleteUrl(url.shortLink)')
+            i(class='fa fa-remove')
+        div(class='new-url-entry')
+          form(ng-submit='urlList.addUrl()')
+            input(type='text', ng-model='newUrl.shortLink')
+            input(type='text', ng-model='newUrl.target')
+            input(class='btn-primary', type='submit', value='Add')
+
+  script(src='static/libs/angular/angular.js')
+  script(src='static/libs/angular-route/angular-route.js')
+  script(src='static/libs/angular-resource/angular-resource.js')
+  script(src='static/js/app.js')
+  script(src='static/js/services.js')
+  script(src='static/js/controllers.js')
+  script(src='static/js/filters.js')
+  script(src='static/js/directives.js')

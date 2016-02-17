@@ -1,6 +1,11 @@
-Shorter is a URL shortening server designed to integrate directly with nginx.
+# Devito URL Shortener
+Devito is a URL shortening service designed to integrate directly with nginx.
+Incoming requests are resolved by nginx directly using data stored in a
+Redis database.
 
-It provides a backend for creating shortened URLs stored in a Reids backend,
-and a configuration for nginx to look up URLs from Redis directly.
+The management interface is implemented with Node.js, Express, and Redis on
+the backend, and AngularJS on the frontend. The frontend HTML templates are
+written in Jade, and the CSS is in PostCSS with Stylus and Lost Grid plugins.
 
-It is implemented with expressjs, Angular JS, Redis, and nginx. 
+The actual URL resolution is accomplished using an nginx configuration using
+a Lua script to pull the redirects from the Redis database.
