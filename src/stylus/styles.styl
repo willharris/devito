@@ -12,6 +12,10 @@ columns()
     &:nth-child(3)
       lost-column: 1/13
 
+// c.f. https://docs.angularjs.org/api/ng/directive/ngCloak
+[ng\\\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
+
 .url-list
   padding: 10px
   background: lightblue

@@ -2,31 +2,34 @@ extends layout
 
 block body
   div(class='container')
-    div(class='jumbotron')
+    div.jumbotron
       h1 Devito URL Shortener
       p Keep it short & classy
     section
-      div(class='url-list', ng-controller='UrlListController as urlList')
-        div(class='url-header')
+      h3 http://#{ HOSTNAME }
+    section
+      div.url-list(ng-controller='UrlListController as urlList')
+        div.url-header
           h4 Short Link
           h4 Target
-        div(class='new-url-entry')
+        div.new-url-entry
           form(ng-submit='urlList.addUrl()')
-            div(class='columns')
-              input(class='short-link', type='text', ng-model='newUrl.shortLink')
-              input(class=type='text', ng-model='newUrl.target')
-              button(class='btn btn-primary btn-sm', type='submit')
-                i(class='fa fa-plus')
+            div.columns
+              input(type='text', ng-model='newUrl.shortLink')
+              input(type='text', ng-model='newUrl.target')
+              button.btn.btn-primary.btn-sm(type='submit')
+                i.fa.fa-plus
             input(type='hidden', ng-model='newUrl.idx')
-        div(class='url-entry', ng-repeat='url in urls | orderBy:"-idx"')
-          span(class='short-link') {{ url.shortLink }}
-          span(class='target') {{ url.target }}
-          button(class='btn btn-danger btn-sm', ng-click='urlList.deleteUrl(url.shortLink)')
-            i(class='fa fa-remove')
+        div.url-entry.ng-cloak(ng-repeat='url in urls | orderBy:"-idx"', ng-cloak)
+          span
+            a(href='http://#{ HOSTNAME }/{{ url.shortLink }}', target='_blank') {{ url.shortLink }}
+          span {{ url.target }}
+          button.btn.btn-danger.btn-sm(ng-click='urlList.deleteUrl(url.shortLink)')
+            i.fa.fa-remove
 
-  script(src='static/libs/angular/angular.js')
-  script(src='static/libs/angular-route/angular-route.js')
-  script(src='static/libs/angular-resource/angular-resource.js')
+  script(src='static/libs/angular/angular.min.js')
+  script(src='static/libs/angular-route/angular-route.min.js')
+  script(src='static/libs/angular-resource/angular-resource.min.js')
   script(src='static/js/app.js')
   script(src='static/js/services.js')
   script(src='static/js/controllers.js')
