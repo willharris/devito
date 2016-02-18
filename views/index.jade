@@ -6,9 +6,9 @@ block body
       h1 Devito URL Shortener
       p Keep it short & classy
     section
-      h3 http://#{ HOSTNAME }
+      h3#host_url http://#{ HOSTNAME }
     section
-      div.url-list(ng-controller='UrlListController as urlList')
+      div.url-list(ng-controller='UrlListController as urlList' ng-model)
         div.url-header
           h4 Short Link
           h4 Target
@@ -27,6 +27,7 @@ block body
           button.btn.btn-danger.btn-sm(ng-click='urlList.deleteUrl(url.shortLink)')
             i.fa.fa-remove
 
+  script(src='static/libs/jquery/dist/jquery.min.js')
   script(src='static/libs/angular/angular.min.js')
   script(src='static/libs/angular-route/angular-route.min.js')
   script(src='static/libs/angular-resource/angular-resource.min.js')
