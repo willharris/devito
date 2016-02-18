@@ -20,11 +20,9 @@ columns()
   .url-entry
     span
       padding: 5px
+      word-wrap: break-word
       background: lighten(lightblue, 30%)
   .new-url-entry
     form
-      columns()
-      input
-        &[type='submit']
-          margin-top: 20px
-          lost-column: 1/5
+      .columns
+        columns()

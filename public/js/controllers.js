@@ -11,7 +11,14 @@ angular.module('myApp.controllers', [])
 
             $scope.updateUrls = function () {
                 Url.query(function (data) {
+                    var maxIdx = 0;
                     $scope.urls = data;
+                    data.forEach(function (elem, idx) {
+                        if (elem.idx > maxIdx) {
+                            maxIdx = elem.idx;
+                        }
+                    });
+                    $scope.newUrl.idx = maxIdx + 1;
                 });
             };
 

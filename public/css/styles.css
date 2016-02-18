@@ -98,100 +98,80 @@
 }
 .url-list .url-entry span {
   padding: 5px;
+  word-wrap: break-word;
   background: #c6e4ee;
 }
-.url-list .new-url-entry form {
+.url-list .new-url-entry form .columns {
   *zoom: 1;
   padding: 10px;
 }
-.url-list .new-url-entry form:before {
+.url-list .new-url-entry form .columns:before {
   content: '';
   display: table;
 }
-.url-list .new-url-entry form:after {
+.url-list .new-url-entry form .columns:after {
   content: '';
   display: table;
   clear: both;
 }
-.url-list .new-url-entry form > *:first-child {
+.url-list .new-url-entry form .columns > *:first-child {
   width: calc(99.99% * 4/13 - (30px - 30px * 4/13));
 }
-.url-list .new-url-entry form > *:first-child:nth-child(1n) {
+.url-list .new-url-entry form .columns > *:first-child:nth-child(1n) {
   float: left;
   margin-right: 30px;
   clear: none;
 }
-.url-list .new-url-entry form > *:first-child:last-child {
+.url-list .new-url-entry form .columns > *:first-child:last-child {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:first-child:nth-child(13n) {
+.url-list .new-url-entry form .columns > *:first-child:nth-child(13n) {
   float: right;
 }
-.url-list .new-url-entry form > *:first-child:nth-child(13n) {
+.url-list .new-url-entry form .columns > *:first-child:nth-child(13n) {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:first-child:nth-child(13n + 1) {
+.url-list .new-url-entry form .columns > *:first-child:nth-child(13n + 1) {
   clear: left;
 }
-.url-list .new-url-entry form > *:nth-child(2) {
+.url-list .new-url-entry form .columns > *:nth-child(2) {
   width: calc(99.99% * 8/13 - (30px - 30px * 8/13));
 }
-.url-list .new-url-entry form > *:nth-child(2):nth-child(1n) {
+.url-list .new-url-entry form .columns > *:nth-child(2):nth-child(1n) {
   float: left;
   margin-right: 30px;
   clear: none;
 }
-.url-list .new-url-entry form > *:nth-child(2):last-child {
+.url-list .new-url-entry form .columns > *:nth-child(2):last-child {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:nth-child(2):nth-child(13n) {
+.url-list .new-url-entry form .columns > *:nth-child(2):nth-child(13n) {
   float: right;
 }
-.url-list .new-url-entry form > *:nth-child(2):nth-child(13n) {
+.url-list .new-url-entry form .columns > *:nth-child(2):nth-child(13n) {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:nth-child(2):nth-child(13n + 1) {
+.url-list .new-url-entry form .columns > *:nth-child(2):nth-child(13n + 1) {
   clear: left;
 }
-.url-list .new-url-entry form > *:nth-child(3) {
+.url-list .new-url-entry form .columns > *:nth-child(3) {
   width: calc(99.99% * 1/13 - (30px - 30px * 1/13));
 }
-.url-list .new-url-entry form > *:nth-child(3):nth-child(1n) {
+.url-list .new-url-entry form .columns > *:nth-child(3):nth-child(1n) {
   float: left;
   margin-right: 30px;
   clear: none;
 }
-.url-list .new-url-entry form > *:nth-child(3):last-child {
+.url-list .new-url-entry form .columns > *:nth-child(3):last-child {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:nth-child(3):nth-child(13n) {
+.url-list .new-url-entry form .columns > *:nth-child(3):nth-child(13n) {
   float: right;
 }
-.url-list .new-url-entry form > *:nth-child(3):nth-child(13n) {
+.url-list .new-url-entry form .columns > *:nth-child(3):nth-child(13n) {
   margin-right: 0;
 }
-.url-list .new-url-entry form > *:nth-child(3):nth-child(13n + 1) {
-  clear: left;
-}
-.url-list .new-url-entry form input[type='submit'] {
-  margin-top: 20px;
-  width: calc(99.99% * 1/5 - (30px - 30px * 1/5));
-}
-.url-list .new-url-entry form input[type='submit']:nth-child(1n) {
-  float: left;
-  margin-right: 30px;
-  clear: none;
-}
-.url-list .new-url-entry form input[type='submit']:last-child {
-  margin-right: 0;
-}
-.url-list .new-url-entry form input[type='submit']:nth-child(5n) {
-  float: right;
-}
-.url-list .new-url-entry form input[type='submit']:nth-child(5n) {
-  margin-right: 0;
-}
-.url-list .new-url-entry form input[type='submit']:nth-child(5n + 1) {
+.url-list .new-url-entry form .columns > *:nth-child(3):nth-child(13n + 1) {
   clear: left;
 }
 

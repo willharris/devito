@@ -1,3 +1,13 @@
+--
+-- Lua script based on https://github.com/openresty/lua-resty-redis.git
+-- to read URL redirection keys from Redis and redirect clients to the
+-- appropriate new URL.
+--
+-- Redis keys created based on the URL path minus the leading slash, prefixed
+-- with 'shrt#'. Values are then retrieved from the 'link' hash value of the
+-- results.
+--
+
 -- We limit the possible request length to 64 chars, and exclude
 -- the leading slash. Note that Lua string indices are 1-based!
 local key = ngx.unescape_uri(string.sub(ngx.var.uri, 2, 65))
@@ -22,7 +32,7 @@ if not ok then
     ngx.exit(503) -- return service not available
 end
 
-local res, err = red:get('shrt#'..key)
+local res, err = red:hget('shrt#'..key, 'link')
 if err then
     ngx.log(ngx.ERR, 'Failed to get key "', key, '": ', err)
 end
