@@ -29,7 +29,9 @@ block body
                 div.help-block.ng-cloak(ng-messages='urlForm.shortLink.$error',
                   ng-if='urlForm.shortLink.$dirty && (urlForm.shortLink.$invalid || urlForm.shortLink.$error.required)')
                   div(ng-message='required') The short link is required.
-                  div(ng-message='validShort') The short link must not start with a slash.
+                  div(ng-message='startingSlash') The short link must not start with a slash.
+                  div(ng-message='httpPrefix') The short link must not start with HTTP.
+                  div(ng-message='hasHash') The short link must not contain a hash.
 
               div.form-group(ng-class="{'has-error': urlForm.target.$dirty && " +
                 "(urlForm.target.$invalid || urlForm.target.$error.required)}")
@@ -44,9 +46,9 @@ block body
             input(type='hidden', ng-model='newUrl.idx')
 
         div.url-entry.ng-cloak(ng-repeat='url in urls | orderBy:"-idx"', ng-cloak)
-          span
+          span.well
             a(href='http://#{ HOSTNAME }/{{ url.shortLink }}', target='_blank') {{ url.shortLink }}
-          span {{ url.target }}
+          span.well {{ url.target }}
           button.btn.btn-danger.btn-sm(ng-click='urlList.deleteUrl(url.shortLink)')
             i.fa.fa-remove
 

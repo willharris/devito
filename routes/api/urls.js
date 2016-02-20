@@ -41,12 +41,19 @@ exports.all = function (req, res) {
 };
 
 exports.create = function (req, res) {
-    var key = 'shrt#' + req.body.shortLink;
-    client.hmset(key, {
-        'idx': req.body.idx,
-        'link': req.body.target
-    });
-    res.status(201).json({});
+    if (typeof(req.body.shortLink) !== 'undefined' &&
+        typeof(req.body.idx) !== 'undefined' &&
+        typeof(req.body.target) !== 'undefined')
+    {
+        var key = 'shrt#' + req.body.shortLink;
+        client.hmset(key, {
+            'idx': req.body.idx,
+            'link': req.body.target
+        });
+        res.status(201).json({});
+    } else {
+        res.sendStatus(400);
+    }
 };
 
 exports.delete = function (req, res) {

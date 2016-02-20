@@ -8,7 +8,12 @@
 }
 .url-list {
   padding: 10px;
+  margin-bottom: 20px;
   background: #add8e6;
+  border-radius: 6px;
+}
+.url-list .well {
+  border-color: #6fbbd3;
 }
 .url-list .url-header,
 .url-list .url-entry {

@@ -28,10 +28,12 @@ angular.module('myApp.controllers', [])
             };
 
             urlList.addUrl = function () {
-                $scope.newUrl.$save(function () {
-                    $scope.updateUrls();
-                });
-                $scope.focusInput();
+                if ($scope.newUrl.$valid) {
+                    $scope.newUrl.$save(function () {
+                        $scope.updateUrls();
+                    });
+                    $scope.focusInput();
+                }
             };
 
             urlList.deleteUrl = function (shortLink) {
